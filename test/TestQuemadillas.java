@@ -22,6 +22,35 @@ public class TestQuemadillas {
 		
 	}
 	
+	public static void getPositions(List<Player> ls){
+		Map<String, List<String>> hm = new HashMap<>();
+		
+		
+		for(Player p : ls) {
+			
+			if(hm.containsKey(p.getPosition())) {
+				
+				List<String> lista = hm.get(p.getPosition());
+				String name = p.getName();
+				lista.add(name);
+				hm.replace(p.getPosition(), lista);
+			}
+			else {
+				
+				List<String> lista = new ArrayList<>();
+				lista.add(p.getName());
+				hm.put(p.getPosition(), lista);
+			}
+		}
+		
+		hm.forEach((key, value) -> {System.out.println(key + value);});
+		
+		
+		
+		
+	}
+	
+	
 	
 	public static List<Player> initialTest() throws IOException {
 		String file = "src\\datos\\Quemadillas.csv";
