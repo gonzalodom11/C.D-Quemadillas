@@ -37,14 +37,14 @@ public class TestQuemadillas {
 	
 	public static void table(List<Player> ls) {
 		
-		String[]columNames = {"Name", "Position", "Goals","Points","% Victories"};
+		String[]columNames = {"Name", "Position", "Games","Goals","Points","Victories","% Victories"};
 		
-		String [][] data = new String[ls.size()][5]; 
+		String [][] data = new String[ls.size()][7]; 
         
 		Integer index = 0;
        for(Player p : ls) {
-    	   data[index]= new String[] {p.getName(),p.getPosition(),p.getGoals().toString(),
-    			   p.getPoints().toString(),String.valueOf((p.getVictories()*100/p.getGames())+"%")};
+    	   data[index]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),p.getGoals().toString(),
+    			   p.getPoints().toString(),p.getVictories().toString(),String.valueOf((p.getVictories()*100/p.getGames())+"%")};
     	   index++;
        }
 		
