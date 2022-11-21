@@ -1,4 +1,4 @@
-# Quemadillas-F.C
+# C.D. Quemadillas
 
 <p align="center">
   <img src="https://github.com/gonzalodom11/Quemadillas-F.C/blob/main/images/image309.png">
