@@ -5,9 +5,15 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
+
+import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 import elements.Player;
 
@@ -17,10 +23,53 @@ public class TestQuemadillas {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		List<Player> lista = initialTest();
+		//showData(lista);
+		//topScorers(lista,"poi");
+		table(lista);
+	}
+	
+	
+	public static void showData(List<Player> ls) {
+		for(Player p : ls) {
+			System.out.println(p.displayAll());
+		}
+	}
+	
+	public static void table(List<Player> ls) {
 		
-		topScorers(lista);
+		String[]columNames = {"Name", "Position", "Goals","Points","% Victories"};
+		
+		String [][] data = new String[ls.size()][5]; 
+        
+		Integer index = 0;
+       for(Player p : ls) {
+    	   data[index]= new String[] {p.getName(),p.getPosition(),p.getGoals().toString(),
+    			   p.getPoints().toString(),String.valueOf((p.getVictories()*100/p.getGames())+"%")};
+    	   index++;
+       }
+		
+		
+		
+		
+		
+		
+	
+		
+		JTable table = new JTable(data,columNames);
+		
+		
+		
+		JFrame frame = new JFrame("Table Demo");
+		frame.setSize(500,500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JScrollPane sp = new JScrollPane(table);
+	    frame.add(sp);
+		frame.setVisible(true);
 		
 	}
+	
+	
+	
 	
 	public static void getPositions(List<Player> ls){
 		Map<String, List<String>> hm = new HashMap<>();
@@ -53,7 +102,7 @@ public class TestQuemadillas {
 	
 	
 	public static List<Player> initialTest() throws IOException {
-		String file = "src\\datos\\Quemadillas.csv";
+		String file = "datos\\Quemadillas.csv";
 		BufferedReader reader = new BufferedReader(new FileReader(file));
 		Integer index = 0;
 		List<Player> result = new ArrayList<>();
@@ -83,8 +132,8 @@ public class TestQuemadillas {
 	    	        				 Integer.valueOf(fields[6]), //draws
 	    	        				 null,
 	    	        				 Integer.valueOf(fields[7]), //goals
-	    	        				 Integer.valueOf(fields[8]), // assits
-	    	        				 Integer.valueOf(fields[9]) // MVPs
+	    	        				 Integer.valueOf(fields[8])
+	    	 
 	        						 )
 	        				 );
 	        		 
@@ -112,13 +161,25 @@ public class TestQuemadillas {
 	}
 	
 	
-	public static void topScorers(List<Player> ls) {
-		ls.sort((Player p1, Player p2) -> p2.getGoals()-p1.getGoals());	
-		for(int index = 0; index<5;index++) {
-			
-			System.out.println(ls.get(index).display("name", "position", "goals", null, null, null));
+	public static void topScorers(List<Player> ls, String mode) {
+		if(mode=="points") {
+			ls.sort((Player p1, Player p2) -> p2.getPoints()-p1.getPoints());	
+			for(int index = 0; index<7;index++) {
+				
+				System.out.println(ls.get(index).display("name", "position", "points", null, null, null));
+			}
+		}
+			else {
+				ls.sort((Player p1, Player p2) -> p2.getGoals()-p1.getGoals());	
+				for(int index = 0; index<7;index++) {
+					
+					System.out.println(ls.get(index).display("name", "position", "goals", null, null, null));
+			}
+		
 			
 		}
+		
+		
 	
 		
 	}
