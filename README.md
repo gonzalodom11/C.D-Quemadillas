@@ -8,7 +8,7 @@ Este es el repositorio del C.D Quemadillas, donde podrás encontrar estadística
 
 
 <p align="center">
-  <img src="https://github.com/gonzalodom11/Quemadillas-F.C/blob/main/images/Screenshot%202022-11-21%20162230.jpg">
+  <img src="https://github.com/gonzalodom11/Quemadillas-F.C/blob/main/images/initialTable.jpg">
 </p>
 
 
