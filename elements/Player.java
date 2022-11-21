@@ -18,6 +18,21 @@ public class Player {
 	Integer draws = 0; //6
 	Integer defeats = games - victories - draws; // 7
 	Integer goals = 0;
+	public Integer getDraws() {
+		return draws;
+	}
+
+	public void setDraws(Integer draws) {
+		this.draws = draws;
+	}
+
+	public Integer getPoints() {
+		return points;
+	}
+
+	public void setPoints(Integer points) {
+		this.points = points;
+	}
 	Integer asists = 0;
 	Integer points = 0;
 	
@@ -29,8 +44,8 @@ public class Player {
 	
 
 	public Player(Integer id, String name, Integer age, String position, Integer games, Integer victories,
-			Integer draws, Integer defeats, Integer goals, Integer asists, Integer points) {
-		super();
+			Integer draws, Integer defeats, Integer goals, Integer asists) {
+		
 		this.id = id;
 		this.name = name;
 		this.age = age;
@@ -41,7 +56,7 @@ public class Player {
 		this.defeats = games - victories - draws;
 		this.goals = goals;
 		this.asists = asists;
-		this.points = victories*3 + draws;
+		points = victories*3 + draws;
 	}
 	
 	public String display(String s1 , String s2, String s3,String s4, String s5, String s6) {
@@ -74,6 +89,8 @@ public class Player {
 			  case "goals":
 				  result+= " | goals:"+goals;
 			    break;
+			  case "points":
+				  result += " | points:"+points;
 			  default:
 				  break;
 			}
@@ -86,11 +103,13 @@ public class Player {
 		return result;
 	}
 	
-	public String displayAll() {
-		return " id:" + id + " | Name:"+name+" | Age:"+age+" | Position:"+ position
-				+" | Games:"+ games + " | Victories:"+ victories + " | Draws:"
-				+ draws + " | Defeats:" + defeats + " | Goals:"+ goals + " | Asists:" + asists
-				+" | Points:" + points;
+	public  String displayAll() {
+	
+			return " id:" + id + " | Name:"+name+" | Age:"+age+" | Position:"+ position
+					+" | Games:"+ games + " | Victories:"+ victories + " | Draws:"
+					+ draws + " | Defeats:" + defeats + " | Goals:"+ goals + " | Asists:" + asists
+					+" | Points:" + points;
+		
 	}
 	
 	
