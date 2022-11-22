@@ -3,6 +3,7 @@ package test;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -25,7 +26,7 @@ public class TestQuemadillas {
 		List<Player> lista = initialTest();
 		//showData(lista);
 		//topScorers(lista,"poi");
-		table(lista);
+		tableTop(lista);
 	}
 	
 	
@@ -37,29 +38,26 @@ public class TestQuemadillas {
 	
 	public static void table(List<Player> ls) {
 		
-		String[]columNames = {"Name", "Position", "Games","Goals","Points","Victories","% Victories"};
+		String[]columNames = {"Nombre", "Posición", "Partidos","Victorias","Puntos","% Victorias","Goles"};
 		
 		String [][] data = new String[ls.size()][7]; 
         
 		Integer index = 0;
        for(Player p : ls) {
-    	   data[index]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),p.getGoals().toString(),
-    			   p.getPoints().toString(),p.getVictories().toString(),String.valueOf((p.getVictories()*100/p.getGames())+"%")};
+    	   data[index]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),
+    			   					  p.getVictories().toString(), p.getPoints().toString(),
+    			   					  String.valueOf((p.getVictories()*100/p.getGames())+"%"),
+    			   					  p.getGoals().toString()
+    	   							 };
     	   index++;
        }
 		
-		
-		
-		
-		
-		
-	
 		
 		JTable table = new JTable(data,columNames);
 		
 		
 		
-		JFrame frame = new JFrame("Table Demo");
+		JFrame frame = new JFrame("Plantilla 2022/23");
 		frame.setSize(500,500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		JScrollPane sp = new JScrollPane(table);
@@ -67,6 +65,12 @@ public class TestQuemadillas {
 		frame.setVisible(true);
 		
 	}
+	
+	
+	
+	
+	
+	
 	
 	
 	
@@ -136,11 +140,9 @@ public class TestQuemadillas {
 	    	 
 	        						 )
 	        				 );
-	        		 
-	 	              
+	        		      
 	        	 }
 	            
-	        	
 	            index ++;
 	            line = reader.readLine();
 	         }
@@ -160,14 +162,57 @@ public class TestQuemadillas {
 	
 	}
 	
+	public static void tableTop(List<Player> ls) {
+		DecimalFormat df = new DecimalFormat("0.00");
+		List<Player> lista = topScorers(ls,"goals");
+		String[]columNames = {"Nombre", "Posición", "Partidos","Goles","Goles/Partido"};
+		
+		String [][] data = new String[lista.size()][5]; 
+        
+		Integer index = 0;
+       for(Player p : lista) {
+    	   Double goalsRate = Double.valueOf(p.getGoals())/Double.valueOf(p.getGames());
+    	   String golesRate = df.format(goalsRate);
+    	   data[index]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),
+    			   					  p.getGoals().toString(),
+    			   					  golesRate
+    			   					  };
+    	   index++;
+       }
+		
+		
+		JTable table = new JTable(data,columNames);
+		
+		
+		
+		JFrame frame = new JFrame("Máximos goleadores");
+		frame.setSize(500,500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JScrollPane sp = new JScrollPane(table);
+	    frame.add(sp);
+		frame.setVisible(true);
+		
+	}
 	
-	public static void topScorers(List<Player> ls, String mode) {
-		if(mode=="points") {
-			ls.sort((Player p1, Player p2) -> p2.getPoints()-p1.getPoints());	
-			for(int index = 0; index<7;index++) {
-				
-				System.out.println(ls.get(index).display("name", "position", "points", null, null, null));
+	
+	
+	
+	
+	
+	
+	public static List<Player> topScorers(List<Player> ls, String mode) {
+		List<Player> result = new ArrayList<>();
+		if(mode=="goals") {
+			ls.sort((Player p1, Player p2) -> p2.getGoals()-p1.getGoals());	
+			for(int index = 0; index<10;index++) {
+				result.add(ls.get(index));
+				if(index>=4) {
+					if(ls.get(index+1).getGoals()<ls.get(index).getGoals()) {
+						break;
+					}
+				}
 			}
+			
 		}
 			else {
 				ls.sort((Player p1, Player p2) -> p2.getGoals()-p1.getGoals());	
@@ -181,6 +226,6 @@ public class TestQuemadillas {
 		
 		
 	
-		
+		return result;
 	}
 }
