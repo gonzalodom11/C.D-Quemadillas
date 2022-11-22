@@ -8,8 +8,13 @@ Este es el repositorio del C.D Quemadillas, donde podrás encontrar estadística
 
 
 <p align="center">
-  <img src="https://github.com/gonzalodom11/Quemadillas-F.C/blob/main/images/initialTable.jpg">
+  <img src="https://github.com/gonzalodom11/C.D-Quemadillas/blob/main/images/intialTableB.jpg">
 </p>
 
+
+# Máximos Goleadores
+<p align="center">
+  <img src="https://github.com/gonzalodom11/C.D-Quemadillas/blob/main/images/maximosGoleadores.jpg">
+</p>
 
 
