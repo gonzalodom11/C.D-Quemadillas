@@ -26,7 +26,7 @@ public class TestQuemadillas {
 		List<Player> lista = initialTest();
 		//showData(lista);
 		//topScorers(lista,"poi");
-		tableTop(lista);
+		tableRafalin(lista);
 	}
 	
 	
@@ -58,6 +58,40 @@ public class TestQuemadillas {
 		
 		
 		JFrame frame = new JFrame("Plantilla 2022/23");
+		frame.setSize(500,500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JScrollPane sp = new JScrollPane(table);
+	    frame.add(sp);
+		frame.setVisible(true);
+		
+	}
+	
+public static void tableRafalin(List<Player> ls) {
+		
+		String[]columNames = {"Nombre", "Posición", "Partidos","Victorias","Puntos","% Victorias","Goles"};
+		
+		String [][] data = new String[1][7]; 
+        
+		Integer index = 0;
+       for(Player p : ls) {
+    	   if(p.getId()==11) {
+    		   data[0]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),
+	   					  p.getVictories().toString(), p.getPoints().toString(),
+	   					  String.valueOf((p.getVictories()*100/p.getGames())+"%"),
+	   					  "7"
+						 };
+    		   break;
+    	   }
+    	   
+    	   
+       }
+		
+		
+		JTable table = new JTable(data,columNames);
+		
+		
+		
+		JFrame frame = new JFrame("Pichichi Quemadillas");
 		frame.setSize(500,500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		JScrollPane sp = new JScrollPane(table);
