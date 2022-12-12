@@ -26,7 +26,7 @@ public class TestQuemadillas {
 		List<Player> lista = initialTest();
 		//showData(lista);
 		//topScorers(lista,"poi");
-		tableRafalin(lista);
+		tableTop(lista);
 	}
 	
 	
