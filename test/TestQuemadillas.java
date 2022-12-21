@@ -26,7 +26,7 @@ public class TestQuemadillas {
 		List<Player> lista = initialTest();
 		//showData(lista);
 		//topScorers(lista,"poi");
-		tableTop(lista);
+		table(lista);
 	}
 	
 	
@@ -39,32 +39,58 @@ public class TestQuemadillas {
 	public static void table(List<Player> ls) {
 		
 		String[]columNames = {"Nombre", "Posición", "Partidos","Victorias","Puntos","% Victorias","Goles"};
+		ls = ls.stream().filter(x -> !x.getName().contains("(Invitado)")).toList();
+		
 		
 		String [][] data = new String[ls.size()][7]; 
         
 		Integer index = 0;
        for(Player p : ls) {
-    	   data[index]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),
-    			   					  p.getVictories().toString(), p.getPoints().toString(),
-    			   					  String.valueOf((p.getVictories()*100/p.getGames())+"%"),
-    			   					  p.getGoals().toString()
-    	   							 };
+    		   data[index]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),
+	   					  p.getVictories().toString(), p.getPoints().toString(),
+	   					  String.valueOf((p.getVictories()*100/p.getGames())+"%"),
+	   					  p.getGoals().toString()
+						 };
     	   index++;
        }
-		
-		
+
 		JTable table = new JTable(data,columNames);
-		
-		
-		
 		JFrame frame = new JFrame("Plantilla 2022/23");
 		frame.setSize(500,500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		JScrollPane sp = new JScrollPane(table);
 	    frame.add(sp);
-		frame.setVisible(true);
-		
+		frame.setVisible(true);		
 	}
+	
+public static void tableInvitados(List<Player> ls) {
+		
+		String[]columNames = {"Nombre", "Posición", "Partidos","Victorias","Puntos","% Victorias","Goles"};
+		ls = ls.stream().filter(x -> x.getName().contains("(Invitado)")).toList();
+		
+		String [][] data = new String[ls.size()][7]; 
+        
+		Integer index = 0;
+       for(Player p : ls) {
+    		   data[index]= new String[] {p.getName().replace("(Invitado)", ""),p.getPosition(),p.getGames().toString(),
+	   					  p.getVictories().toString(), p.getPoints().toString(),
+	   					  String.valueOf((p.getVictories()*100/p.getGames())+"%"),
+	   					  p.getGoals().toString()
+						 };
+    		   index++;
+       }
+
+		JTable table = new JTable(data,columNames);
+		JFrame frame = new JFrame("Invitados 2022/23");
+		frame.setSize(500,500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JScrollPane sp = new JScrollPane(table);
+	    frame.add(sp);
+		frame.setVisible(true);		
+	}
+	
+	
+	
 	
 public static void tableRafalin(List<Player> ls) {
 		
@@ -89,8 +115,6 @@ public static void tableRafalin(List<Player> ls) {
 		
 		JTable table = new JTable(data,columNames);
 		
-		
-		
 		JFrame frame = new JFrame("Pichichi Quemadillas");
 		frame.setSize(500,500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -99,11 +123,6 @@ public static void tableRafalin(List<Player> ls) {
 		frame.setVisible(true);
 		
 	}
-	
-	
-	
-	
-	
 	
 	
 	
