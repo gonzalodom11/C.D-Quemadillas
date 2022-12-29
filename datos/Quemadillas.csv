@@ -1,40 +1,40 @@
 Id,Nombre,Edad,PosiciÃ³n,Partidos,Victorias,Empates,Goles,Asistencias
 5,Tony,55,DC,8,0,0,6,0
 11,Rafalín,0,DC,7,3,0,2,0
-19,Manuel del Rosal,0,DC,5,4,0,0,0
-33,Rafa Manosalva,54,DC,7,5,0,7,0
-35,Jesús Jovic,0,DC,5,2,0,5,0
-1,Negri,34,DFC,6,4,0,0,0
-4,Espejo,46,DFC,7,3,0,0,0
+19,Manuel del Rosal,0,DC,6,5,0,1,0
+33,Rafa Manosalva,54,DC,8,6,0,7,0
+35,Jesús Jovic,0,DC,6,3,0,5,0
+1,Negri,34,DFC,7,4,0,0,0
+4,Espejo,46,DFC,8,3,0,0,0
 31,Sergio,0,DFC,2,0,0,0,0
 32,Fernando,0,DFC,2,2,0,0,0
 34,Paco Alto,0,DFC,1,1,0,0,0
 10,Albertosi,0,ED,7,4,0,0,0
 23,Miguel,0,ED,5,3,0,5,1
-18,David,0,EI,5,4,0,0,0
-14,Paco,0,LD,5,2,0,0,0
+18,David,0,EI,6,4,0,0,0
+14,Paco,0,LD,6,3,0,0,0
 28,Diego,0,LD,2,1,0,0,0
-29,Javi,0,LD,6,2,0,0,0
-15,Diego Cigala,47,LI,5,2,0,0,0
+29,Javi,0,LD,7,3,0,0,0
+15,Diego Cigala,47,LI,6,2,0,0,0
 20,Fede,59,LI,5,3,0,0,0
 6,Gonzalo,20,MC,5,1,0,2,1
-7,Mago,54,MC,6,4,0,4,0
-8,Cobos,50,MC,7,6,0,0,1
-16,Zidane,0,MC,4,2,0,1,0
+7,Mago,54,MC,7,4,0,4,0
+8,Cobos,50,MC,8,7,0,0,1
+16,Zidane,0,MC,5,2,0,1,0
 24,Santi,0,MC,1,0,0,0,0
-25,Rafa Pulido,0,MC,5,2,0,2,0
-26,Juanma,51,MC,3,2,0,0,0
+25,Rafa Pulido,0,MC,6,2,0,2,0
+26,Juanma,51,MC,4,3,0,0,0
 27,Juanjo,0,MC,5,2,0,2,0
-2,Pedro,70,MCD,8,3,0,0,0
-21,Rafa Cortés,0,MCD,6,3,0,0,0
-3,Hugo,17,MCO,7,5,0,10,0
-13,Jesús Navarro,40,MCO,6,5,0,4,0
+2,Pedro,70,MCD,9,4,0,0,0
+21,Rafa Cortés,0,MCD,7,4,0,0,0
+3,Hugo,17,MCO,8,6,0,11,0
+13,Jesús Navarro,40,MCO,7,5,0,5,0
 17,Roberto,49,MCO,7,3,0,3,1
-12,Juaniki,51,PT,6,2,0,2,0
-9,Antonio Laguna,0,MI,8,6,0,0,0
+12,Juaniki,51,PT,7,2,0,2,0
+9,Antonio Laguna,0,MI,9,6,0,0,0
 22,Juan Carlos,50,PT,6,2,0,0,0
 30,Juan,0,PT,3,3,0,0,0
-36,Carlos,0,DFC,2,0,0,0,0
+36,Carlos,0,DFC,3,1,0,0,0
 37,Miguel Fuentes,0,MC,2,1,0,0,0
 38,Alfonso,0,DFC,2,1,0,0,0
 39,Pedro Higaldo (Invitado),20,DFC,1,1,0,0,0
@@ -43,3 +43,5 @@ Id,Nombre,Edad,PosiciÃ³n,Partidos,Victorias,Empates,Goles,Asistencias
 42,Jose (Invitado),0,DC,1,0,0,0,0
 43,Miki(Invitado),0,EI,1,0,0,0,0
 44,Dylan(Invitado),0,MCO,1,0,0,0,0
+45,Santi Gómez,0,DFC,1,0,0,0,0
+46,Jesús del Rosal,0,DFC,1,1,0,0,0
