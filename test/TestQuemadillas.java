@@ -25,8 +25,8 @@ public class TestQuemadillas {
 		// TODO Auto-generated method stub
 		List<Player> lista = initialTest();
 		//showData(lista);
-		//topScorers(lista,"poi");
-		tableTop(lista);
+		TestQuemadillas.table(lista);
+		//tableTop(lista);
 	}
 	
 	
