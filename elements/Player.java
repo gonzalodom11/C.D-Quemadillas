@@ -1,9 +1,10 @@
 package elements;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
-public class Player {
+public class Player implements Comparable<Player> {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -18,6 +19,17 @@ public class Player {
 	Integer draws = 0; //6
 	Integer defeats = games - victories - draws; // 7
 	Integer goals = 0;
+	Integer points = 0;
+	Double goalsGame = Double.valueOf(goals)/Double.valueOf(games);
+	
+	public Double getGoalsGame() {
+		return goalsGame;
+	}
+
+	public void setGoalsGame(Double goalsGame) {
+		this.goalsGame = goalsGame;
+	}
+
 	public Integer getDraws() {
 		return draws;
 	}
@@ -33,8 +45,8 @@ public class Player {
 	public void setPoints(Integer points) {
 		this.points = points;
 	}
-	Integer asists = 0;
-	Integer points = 0;
+	
+	
 	
 	
 	
@@ -43,8 +55,8 @@ public class Player {
 	
 	
 
-	public Player(Integer id, String name, Integer age, String position, Integer games, Integer victories,
-			Integer draws, Integer defeats, Integer goals, Integer asists) {
+	public Player(Integer id, String name, Integer age, String position, Integer games, 
+			Integer victories,Integer draws,Integer goals) {
 		
 		this.id = id;
 		this.name = name;
@@ -55,8 +67,9 @@ public class Player {
 		this.draws = draws;
 		this.defeats = games - victories - draws;
 		this.goals = goals;
-		this.asists = asists;
+		
 		points = victories*3 + draws;
+		goalsGame = Double.valueOf(goals)/Double.valueOf(games);
 	}
 	
 	public String display(String s1 , String s2, String s3,String s4, String s5, String s6) {
@@ -107,8 +120,7 @@ public class Player {
 	
 			return " id:" + id + " | Name:"+name+" | Age:"+age+" | Position:"+ position
 					+" | Games:"+ games + " | Victories:"+ victories + " | Draws:"
-					+ draws + " | Defeats:" + defeats + " | Goals:"+ goals + " | Asists:" + asists
-					+" | Points:" + points;
+					+ draws + " | Defeats:" + defeats + " | Goals:"+ goals + " | Points:" + points;
 		
 	}
 	
@@ -161,12 +173,7 @@ public class Player {
 	public void setGoals(Integer goals) {
 		this.goals = goals;
 	}
-	public Integer getAsists() {
-		return asists;
-	}
-	public void setAsists(Integer asists) {
-		this.asists = asists;
-	}
+
 	@Override
 	public int hashCode() {
 		// TODO Auto-generated method stub
@@ -191,6 +198,31 @@ public class Player {
 	protected void finalize() throws Throwable {
 		// TODO Auto-generated method stub
 		super.finalize();
+	}
+
+	
+	
+
+	@Override
+	public int compareTo(Player o) {
+		double rate = o.goals/o.games;
+		double thisRate = this.goals/this.games;
+        // elements are sorted in reverse order
+		int res = o.getGoals().compareTo(this.getGoals());
+		
+		if (res == 0) {
+			if(rate>thisRate) {
+				res = 1;
+			}
+			else if(rate<thisRate) {
+				res = -1;
+			}
+			else {
+				res = 0;
+			}
+			
+		}
+		return res;
 	}
 	
 	

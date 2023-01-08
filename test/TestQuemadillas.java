@@ -1,11 +1,15 @@
 package test;
 
+import java.awt.Color;
+import java.awt.Component;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +19,9 @@ import java.util.stream.Stream;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 
+import elements.CustomComparator;
 import elements.Player;
 
 
@@ -25,8 +31,8 @@ public class TestQuemadillas {
 		// TODO Auto-generated method stub
 		List<Player> lista = initialTest();
 		//showData(lista);
+		//TestQuemadillas.table(lista);
 		TestQuemadillas.table(lista);
-		//tableTop(lista);
 	}
 	
 	
@@ -38,21 +44,25 @@ public class TestQuemadillas {
 	
 	public static void table(List<Player> ls) {
 		
-		String[]columNames = {"Nombre", "Posición", "Partidos","Victorias","Puntos","% Victorias","Goles"};
+		String[]columNames = {"Nombre", "Posición", "Partidos","Victorias","Empates","Puntos","% Victorias","Goles"};
 		ls = ls.stream().filter(x -> !x.getName().contains("(Invitado)")).toList();
 		
 		
-		String [][] data = new String[ls.size()][7]; 
+		String [][] data = new String[ls.size()][8]; 
         
 		Integer index = 0;
        for(Player p : ls) {
     		   data[index]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),
-	   					  p.getVictories().toString(), p.getPoints().toString(),
-	   					  String.valueOf((p.getVictories()*100/p.getGames())+"%"),
-	   					  p.getGoals().toString()
+	   					  p.getVictories().toString(),String.valueOf(p.getDraws()),
+	   					  p.getPoints().toString(), String.valueOf((p.getVictories()*100/p.getGames())+"%"),
+	   					  p.getGoals().toString(),
+	   					  p.getPoints().toString(), p.getGoals().toString()
 						 };
+    		   
     	   index++;
        }
+       
+      
 
 		JTable table = new JTable(data,columNames);
 		JFrame frame = new JFrame("Plantilla 2022/23");
@@ -60,6 +70,18 @@ public class TestQuemadillas {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		JScrollPane sp = new JScrollPane(table);
 	    frame.add(sp);
+	    
+	    table.setDefaultRenderer(Object.class, new DefaultTableCellRenderer()
+	       {
+	           @Override
+	           public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
+	           {
+	               final Component c = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
+	               c.setBackground(row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
+	               return c;
+	           }
+	       });
+	    
 		frame.setVisible(true);		
 	}
 	
@@ -187,11 +209,8 @@ public static void tableRafalin(List<Player> ls) {
 	    	        				 Integer.valueOf(fields[4]), // games
 	    	        				 Integer.valueOf(fields[5]), //victories
 	    	        				 Integer.valueOf(fields[6]), //draws
-	    	        				 null,
-	    	        				 Integer.valueOf(fields[7]), //goals
-	    	        				 Integer.valueOf(fields[8])
-	    	 
-	        						 )
+	    	        				 Integer.valueOf(fields[7]) // goals
+	    	        				 )
 	        				 );
 	        		      
 	        	 }
@@ -256,15 +275,20 @@ public static void tableRafalin(List<Player> ls) {
 	public static List<Player> topScorers(List<Player> ls, String mode) {
 		List<Player> result = new ArrayList<>();
 		if(mode=="goals") {
-			ls.sort((Player p1, Player p2) -> p2.getGoals()-p1.getGoals());	
+			ls.sort(Comparator.comparing(Player::getGoalsGame).reversed());
+			ls.sort(Comparator.comparing(Player::getGoals).reversed());
+			
 			for(int index = 0; index<10;index++) {
 				result.add(ls.get(index));
 				if(index>=4) {
-					if(ls.get(index+1).getGoals()<ls.get(index).getGoals()) {
+					if(ls.get(index).getGoals() != ls.get(index+1).getGoals()) {
 						break;
 					}
+						
+					
 				}
 			}
+			
 			
 		}
 			else {
