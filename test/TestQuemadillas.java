@@ -32,7 +32,7 @@ public class TestQuemadillas {
 		List<Player> lista = initialTest();
 		//showData(lista);
 		//TestQuemadillas.table(lista);
-		TestQuemadillas.table(lista);
+		TestQuemadillas.tableTop(lista);
 	}
 	
 	
