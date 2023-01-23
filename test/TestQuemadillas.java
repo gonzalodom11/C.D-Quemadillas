@@ -32,7 +32,8 @@ public class TestQuemadillas {
 		List<Player> lista = initialTest();
 		//showData(lista);
 		//TestQuemadillas.table(lista);
-		TestQuemadillas.tableTop(lista);
+		//TestQuemadillas.tableTop(lista);
+		TestQuemadillas.tableInvitados(lista);
 	}
 	
 	
