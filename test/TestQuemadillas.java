@@ -32,8 +32,9 @@ public class TestQuemadillas {
 		List<Player> lista = initialTest();
 		//showData(lista);
 		//TestQuemadillas.table(lista);
-		TestQuemadillas.tableTop(lista);
+		//TestQuemadillas.tableTop(lista);
 		//TestQuemadillas.tableInvitados(lista);
+		TestQuemadillas.tableRafalin(lista);
 	}
 	
 	
@@ -127,7 +128,7 @@ public static void tableRafalin(List<Player> ls) {
     		   data[0]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),
 	   					  p.getVictories().toString(), p.getPoints().toString(),
 	   					  String.valueOf((p.getVictories()+1*100/p.getGames())+"%"),
-	   					  "7"
+	   					  "8"
 						 };
     		   break;
     	   }
