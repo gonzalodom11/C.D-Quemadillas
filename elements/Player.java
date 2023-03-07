@@ -21,6 +21,7 @@ public class Player implements Comparable<Player> {
 	Integer goals = 0;
 	Integer points = 0;
 	Double goalsGame = Double.valueOf(goals)/Double.valueOf(games);
+	Double victoriesGame = victories*100.0/games;
 	
 	public Double getGoalsGame() {
 		return goalsGame;
@@ -47,14 +48,12 @@ public class Player implements Comparable<Player> {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
 
+	public Double getVictoriesGame() {
+		return victoriesGame;
+	}
+
+	
 	public Player(Integer id, String name, Integer age, String position, Integer games, 
 			Integer victories,Integer draws,Integer goals) {
 		

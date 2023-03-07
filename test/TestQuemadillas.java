@@ -34,7 +34,8 @@ public class TestQuemadillas {
 		//TestQuemadillas.table(lista);
 		//TestQuemadillas.tableTop(lista);
 		//TestQuemadillas.tableInvitados(lista);
-		TestQuemadillas.tableRafalin(lista);
+		//TestQuemadillas.tableRafalin(lista);
+		System.out.println(topWinners(lista));
 	}
 	
 	
@@ -128,7 +129,7 @@ public static void tableRafalin(List<Player> ls) {
     		   data[0]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),
 	   					  p.getVictories().toString(), p.getPoints().toString(),
 	   					  String.valueOf((p.getVictories()+1*100/p.getGames())+"%"),
-	   					  "8"
+	   					  "9"
 						 };
     		   break;
     	   }
@@ -270,9 +271,7 @@ public static void tableRafalin(List<Player> ls) {
 	
 	
 	
-	
-	
-	
+
 	
 	public static List<Player> topScorers(List<Player> ls, String mode) {
 		List<Player> result = new ArrayList<>();
@@ -286,11 +285,9 @@ public static void tableRafalin(List<Player> ls) {
 					if(ls.get(index).getGoals() != ls.get(index+1).getGoals()) {
 						break;
 					}
-						
-					
+							
 				}
 			}
-			
 			
 		}
 			else {
@@ -298,13 +295,64 @@ public static void tableRafalin(List<Player> ls) {
 				for(int index = 0; index<7;index++) {
 					
 					System.out.println(ls.get(index).display("name", "position", "goals", null, null, null));
-			}
-		
-			
+			}	
 		}
-		
-		
-	
 		return result;
 	}
+	
+	
+	public static List<Player> topWinners(List<Player> ls) {
+		List<Player> result = new ArrayList<>();
+		
+			ls.sort(Comparator.comparing(Player::getVictoriesGame).reversed());
+			
+			for(int index = 0; index<10;index++) {
+				result.add(ls.get(index));
+				if(index>=4) {
+					if(ls.get(index).getVictoriesGame() != ls.get(index+1).getVictoriesGame()) {
+						break;
+					}
+							
+				}
+			}
+			
+			
+		
+		return result;
+	}
+	
+	
+	public static void tableTopWinners(List<Player> ls) {
+		DecimalFormat df = new DecimalFormat("0.00");
+		List<Player> lista = topWinners(ls);
+		String[]columNames = {"Nombre", "Posición", "Partidos","Goles","Goles/Partido"};
+		
+		String [][] data = new String[lista.size()][5]; 
+        
+		Integer index = 0;
+       for(Player p : lista) {
+    	   Double goalsRate = Double.valueOf(p.getGoals())/Double.valueOf(p.getGames());
+    	   String golesRate = df.format(goalsRate);
+    	   data[index]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),
+    			   					  p.getGoals().toString(),
+    			   					  golesRate
+    			   					  };
+    	   index++;
+       }
+		
+		
+		JTable table = new JTable(data,columNames);
+		
+		
+		
+		JFrame frame = new JFrame("Máximos goleadores");
+		frame.setSize(500,500);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JScrollPane sp = new JScrollPane(table);
+	    frame.add(sp);
+		frame.setVisible(true);
+		
+	}
+	
+	
 }
