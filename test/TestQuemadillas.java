@@ -302,12 +302,16 @@ public static void tableRafalin(List<Player> ls) {
 	
 	
 	public static List<Player> topWinners(List<Player> ls) {
-		List<Player> result = new ArrayList<>();
-		
-			ls.sort(Comparator.comparing(Player::getVictoriesGame).reversed());
+			List<Player> result = new ArrayList<>();
+			result = ls.stream().filter(x -> ! x.getName().contains("Invitado"))
+					.sorted(Comparator.comparing(Player::getPoints).reversed())
+					.toList();
+			
 			
 			for(int index = 0; index<10;index++) {
-				result.add(ls.get(index));
+				System.out.println(result.get(index).getName()+" "+result.get(index).getPoints().toString());
+				
+				
 				if(index>=4) {
 					if(ls.get(index).getVictoriesGame() != ls.get(index+1).getVictoriesGame()) {
 						break;
@@ -341,17 +345,7 @@ public static void tableRafalin(List<Player> ls) {
        }
 		
 		
-		JTable table = new JTable(data,columNames);
-		
-		
-		
-		JFrame frame = new JFrame("Máximos goleadores");
-		frame.setSize(500,500);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		JScrollPane sp = new JScrollPane(table);
-	    frame.add(sp);
-		frame.setVisible(true);
-		
+	
 	}
 	
 	

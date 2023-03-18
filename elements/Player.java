@@ -69,6 +69,7 @@ public class Player implements Comparable<Player> {
 		
 		points = victories*3 + draws;
 		goalsGame = Double.valueOf(goals)/Double.valueOf(games);
+		victoriesGame = victories*100.0/games;
 	}
 	
 	public String display(String s1 , String s2, String s3,String s4, String s5, String s6) {
