@@ -11,6 +11,11 @@ Este es el repositorio del C.D Quemadillas, donde podrás encontrar estadística
   <img src="https://github.com/gonzalodom11/C.D-Quemadillas/blob/main/images/intialTableB.jpg">
 </p>
 
+<p align="center">
+  <img src="https://github.com/gonzalodom11/C.D-Quemadillas/blob/main/images/puntos.jpg">
+</p>
+
+
 
 # Máximos Goleadores
 <p align="center">
