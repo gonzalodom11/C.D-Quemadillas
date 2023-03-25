@@ -91,7 +91,8 @@ public class TestQuemadillas {
 public static void tableInvitados(List<Player> ls) {
 		
 		String[]columNames = {"Nombre", "Posición", "Partidos","Victorias","Puntos","% Victorias","Goles"};
-		ls = ls.stream().filter(x -> x.getName().contains("(Invitado)")).toList();
+		ls = ls.stream().filter(x -> x.getName().contains("(Invitado)"))
+				.sorted(Comparator.comparing(Player::getGoals).reversed()).toList();
 		
 		String [][] data = new String[ls.size()][7]; 
         
@@ -128,7 +129,7 @@ public static void tableRafalin(List<Player> ls) {
     	   if(p.getId()==11) {
     		   data[0]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),
 	   					  p.getVictories().toString(), p.getPoints().toString(),
-	   					  String.valueOf((p.getVictories()+1*100/p.getGames())+"%"),
+	   					  String.valueOf((p.getVictories()*100/p.getGames())+"%"),
 	   					  "9"
 						 };
     		   break;

@@ -3,9 +3,9 @@ import numpy as np
 def graphVictories():
     
     # create data
-    x = ['Hugo', 'Cobos', 'Manuel del \n Rosal', 'Antonio L.', 'Manosalva']
-    y1 = [38, 35, 32, 30, 29]
-    y2 = [19, 18, 13, 16, 19]
+    x = ['Hugo', 'Cobos', 'Manuel del \n Rosal', 'Manosalva', 'Antonio\nLaguna']
+    y1 = [38, 38, 32, 32, 30]
+    y2 = [19, 19, 14, 20, 17]
 
     # set width of bar
     bar_width = 0.35
