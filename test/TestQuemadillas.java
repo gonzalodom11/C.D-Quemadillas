@@ -31,11 +31,11 @@ public class TestQuemadillas {
 		// TODO Auto-generated method stub
 		List<Player> lista = initialTest();
 		//showData(lista);
-		TestQuemadillas.table(lista);
+		//TestQuemadillas.table(lista);
 		//TestQuemadillas.tableTop(lista);
 		//TestQuemadillas.tableInvitados(lista);
-		//TestQuemadillas.tableRafalin(lista);
-		//System.out.println(topWinners(lista));
+		TestQuemadillas.tableRafalin(lista);
+		System.out.println(topWinners(lista));
 	}
 	
 	
@@ -130,7 +130,7 @@ public static void tableRafalin(List<Player> ls) {
     		   data[0]= new String[] {p.getName(),p.getPosition(),p.getGames().toString(),
 	   					  p.getVictories().toString(), p.getPoints().toString(),
 	   					  String.valueOf((p.getVictories()*100/p.getGames())+"%"),
-	   					  "9"
+	   					  "12"
 						 };
     		   break;
     	   }
