@@ -1,65 +1,71 @@
 Id,Nombre,Edad,PosiciÃ³n,Partidos,Victorias,Empates,Goles,Asistencias
-10,Albertosi,0,ED,23,10,5,1,0
+10,Albertosi,0,ED,26,12,6,1,0
 38,Alfonso,0,DFC,3,1,1,0,0
-9,Antonio Laguna,0,MI,20,10,3,0,0
+9,Antonio Laguna,0,MI,23,10,4,1,0
 40,Antonio Lucena (Invitado),20,LI,2,0,0,0,0
 47,Barrios,0,DFC,1,0,1,0,0
-36,Carlos,0,DFC,8,5,0,1,0
-8,Cobos,50,MC,24,14,5,8,1
-18,David,0,EI,12,6,2,0,0
-28,Diego,0,LD,3,1,1,0,0
-15,Diego Cigala,47,LI,20,7,3,0,0
+36,Carlos,0,DFC,10,6,0,1,0
+8,Cobos,50,MC,27,16,6,9,1
+18,David,0,EI,15,7,3,2,0
+28,Diego,0,LD,4,2,1,0,0
+15,Diego Cigala,47,LI,23,8,4,0,0
 44,Dylan(Invitado),0,MCO,1,0,0,0,0
-4,Espejo,46,DFC,24,8,5,4,0
-20,Fede,59,LI,10,3,0,0,0
+4,Espejo,46,DFC,27,9,6,4,0
+20,Fede,59,LI,12,3,1,0,0
 32,Fernando,0,DFC,7,4,2,0,0
-6,Gonzalo,20,MC,16,1,4,12,1
-3,Hugo,17,MCO,24,14,5,17,0
-29,Javi,0,LD,22,10,5,0,0
+6,Gonzalo,20,MC,17,2,4,14,1
+3,Hugo,17,MCO,27,15,6,19,0
+29,Javi,0,LD,24,10,6,0,0
 46,Jesús del Rosal,0,DFC,9,4,3,0,0
-35,Jesús Jovic,0,DC,10,4,3,6,0
-13,Jesús Navarro,40,MCO,19,8,4,7,0
+35,Jesús Jovic,0,DC,12,5,3,6,0
+13,Jesús Navarro,40,MCO,20,8,4,8,0
 42,Jose (Invitado),0,DC,3,1,1,0,0
 30,Juan,0,PT,4,3,1,0,0
-22,Juan Carlos,50,PT,13,2,4,0,0
-12,Juaniki,51,PT,22,9,4,2,0
+22,Juan Carlos,50,PT,15,3,5,0,0
+12,Juaniki,51,PT,25,10,5,2,0
 27,Juanjo,0,MC,12,4,3,3,0
-26,Juanma,51,DFC,12,4,3,1,0
-7,Mago,54,MC,19,8,5,8,0
-19,Manuel del Rosal,0,DC,16,12,2,3,0
-23,Miguel,0,ED,15,8,3,11,1
-37,Miguel Fuentes,0,MC,10,5,3,3,0
+26,Juanma,51,DFC,13,5,3,1,0
+7,Mago,54,MC,21,9,6,8,0
+19,Manuel del Rosal,0,DC,17,13,2,5,0
+23,Miguel,0,ED,16,8,3,11,1
+37,Miguel Fuentes,0,MC,12,5,4,3,0
 43,Miki(Invitado),0,EI,1,0,0,0,0
-1,Negri,34,DFC,23,7,5,0,0
-14,Paco,0,LD,16,4,5,2,0
+1,Negri,34,DFC,26,7,6,0,0
+14,Paco,0,LD,17,4,5,2,0
 34,Paco Alto,0,DFC,3,2,0,0,0
-2,Pedro,70,MCD,24,10,5,0,0
+2,Pedro,70,MCD,25,10,6,0,0
 39,Pedro Higaldo (Invitado),20,DFC,2,1,0,2,0
-21,Rafa Cortés,0,MCD,18,8,4,0,0
-33,Rafa Manosalva,54,DC,24,12,5,11,0
-25,Rafa Pulido,0,MC,10,3,2,3,0
-11,Rafalín,0,DC,18,9,2,5,0
-17,Roberto,49,MCO,18,5,4,8,1
+21,Rafa Cortés,0,MCD,19,8,4,0,0
+33,Rafa Manosalva,54,DC,26,13,6,12,0
+25,Rafa Pulido,0,MC,11,4,2,3,0
+11,Rafalín,0,DC,20,9,3,5,0
+17,Roberto,49,MCO,20,6,4,8,1
 24,Santi,0,MC,1,0,0,0,0
 45,Santi Gómez,0,DFC,1,0,0,0,0
 31,Sergio,0,DFC,8,2,3,0,0
-5,Toni,55,DC,22,3,4,20,0
+5,Toni,55,DC,25,3,5,21,0
 41,Vicente (Invitado),0,DFC,3,1,1,0,0
-16,Zidane,0,MC,16,5,4,3,0
+16,Zidane,0,MC,17,6,4,3,0
 47,Aharon (Invitado),0,DC,1,0,0,0,0
 48,Aitor (Invitado),0,ED,1,0,0,0,0
 49,Jorge (Invitado),0,DC,1,0,0,0,0
 50,Antonio (Invitado),0,MC,3,3,0,4,0
 51,Fran (Invitado),0,LI,1,0,1,0,0
 52,Álvaro (Invitado),0,LD,1,0,1,0,0
-53,Patxi,0,MC,7,3,0,3,0
+53,Patxi,0,MC,8,3,1,4,0
 54,Carlitos (Invitado),0,MD,3,1,0,3,0
 55,Mario Espejo (Invitado),15,ED,2,2,0,0,0
 56,Mario (Invitado),0,MC,1,1,0,2,0
 57,Rafa Sobrino (Invitado),0,DFC,1,1,0,2,0
 58,Adrian Chencho (Invitado),0,PT,1,0,0,0,0
-59,Ayllon,0,MCD,5,2,0,1,0
+59,Ayllon,0,MCD,6,2,0,1,0
 60,Raul (Invitado),0,PT,2,1,0,0,0
 61,Rafa Pareja (Invitado),0,LD,2,0,0,0,0
 62,Mario Vicente (Invitado),0,MD,1,0,0,0,0
 63,Jose Valencia (Invitado),0,MC,1,1,0,0,0
+64,Pedro Negri (Invitado),0,DFC,1,0,1,0,0
+65,J. Daniel (Invitado),0,MC,2,1,1,0,0
+66,Yoyo (Invitado),0,DFC,1,0,1,0,0
+67,Ángel (Invitado),0,LI,1,1,0,0,0
+68,Giulio (Invitado),0,LD,2,1,0,1,0
+69,Jesules (Invitado),0,DFC,1,0,0,0,0
