@@ -31,11 +31,11 @@ public class TestQuemadillas {
 		// TODO Auto-generated method stub
 		List<Player> lista = initialTest();
 		//showData(lista);
-		TestQuemadillas.table(lista);
+		// TestQuemadillas.table(lista);
 		// TestQuemadillas.tableTop(lista);
 		// TestQuemadillas.tableInvitados(lista);
-		//TestQuemadillas.tableRafalin(lista);
-		// System.out.println(topWinners(lista));
+		// TestQuemadillas.tableRafalin(lista);
+		System.out.println(topWinners(lista));
 	}
 	
 	

@@ -4,8 +4,8 @@ def graphVictories():
     
     # create data
     x = ['Cobos', 'Hugo', 'Manosalva', 'Albertosi', 'Manuel \n del Rosal']
-    y1 = [54, 51, 45, 42, 41]
-    y2 = [27, 27, 26, 26, 17]
+    y1 = [58, 51, 48, 46, 41]
+    y2 = [29, 29, 27, 29, 18]
 
     # set width of bar
     bar_width = 0.35
