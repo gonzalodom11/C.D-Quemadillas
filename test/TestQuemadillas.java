@@ -31,11 +31,11 @@ public class TestQuemadillas {
 		// TODO Auto-generated method stub
 		List<Player> lista = initialTest();
 		//showData(lista);
-		// TestQuemadillas.table(lista);
+		//TestQuemadillas.table(lista);
 		// TestQuemadillas.tableTop(lista);
 		// TestQuemadillas.tableInvitados(lista);
 		// TestQuemadillas.tableRafalin(lista);
-		System.out.println(topWinners(lista));
+		 System.out.println(topWinners(lista));
 	}
 	
 	
@@ -313,7 +313,7 @@ public static void tableRafalin(List<Player> ls) {
 				System.out.println(result.get(index).getName()+" "+result.get(index).getPoints().toString());
 				
 				
-				if(index>=4) {
+				if(index>=5) {
 					if(ls.get(index).getVictoriesGame() != ls.get(index+1).getVictoriesGame()) {
 						break;
 					}
